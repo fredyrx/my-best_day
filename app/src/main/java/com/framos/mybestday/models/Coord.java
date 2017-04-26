@@ -4,22 +4,22 @@ package com.framos.mybestday.models;
 
 public class Coord {
 
-    private Integer lon;
-    private Integer lat;
+    private Double lon;
+    private Double lat;
 
-    public Integer getLon() {
+    public Double getLon() {
         return lon;
     }
 
-    public void setLon(Integer lon) {
+    public void setLon(Double lon) {
         this.lon = lon;
     }
 
-    public Integer getLat() {
+    public Double getLat() {
         return lat;
     }
 
-    public void setLat(Integer lat) {
+    public void setLat(Double lat) {
         this.lat = lat;
     }
 

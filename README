@@ -1,0 +1,11 @@
+Proyecto My Best Day
+Aplicación que muestra datos como humedad, temperatura y presión del lugar donde te encuentras.
+
+Tecnologías utilizadas:
+
+Bibliotecas externas utilizadas:
+
+gson: Para mapeos de clases automática
+android-networking: cliente http
+
+Para inicial el proyecto en Android Studio, se necesita instalar google play services en Android Studio.Para eso ir a Tool > Android > SDK Manager, tab Android SDK e instalar google play services.

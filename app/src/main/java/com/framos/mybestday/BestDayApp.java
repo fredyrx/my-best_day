@@ -3,6 +3,7 @@ package com.framos.mybestday;
 import android.app.Application;
 
 import com.androidnetworking.AndroidNetworking;
+import com.framos.mybestday.models.Coord;
 import com.framos.mybestday.models.WeatherResponse;
 import com.framos.mybestday.network.WeatherApi;
 
@@ -35,5 +36,13 @@ public class BestDayApp extends Application {
 
     public void setWeatherResponse(WeatherResponse w){
         api.setWeather(w);
+    }
+
+    public void setPosition(Coord position){
+        api.setCurrentPosition(position);
+    }
+
+    public Coord getPosition(){
+        return api.getCurrentPosition();
     }
 }

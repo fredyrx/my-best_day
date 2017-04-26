@@ -5,8 +5,8 @@ package com.framos.mybestday.models;
 public class Main {
 
     private Double temp;
-    private Integer humidity;
-    private Integer pressure;
+    private Double humidity;
+    private Double pressure;
     private Double temp_min;
     private Double temp_max;
 
@@ -18,19 +18,19 @@ public class Main {
         this.temp = temp;
     }
 
-    public Integer getHumidity() {
+    public Double getHumidity() {
         return humidity;
     }
 
-    public void setHumidity(Integer humidity) {
+    public void setHumidity(Double humidity) {
         this.humidity = humidity;
     }
 
-    public Integer getPressure() {
+    public Double getPressure() {
         return pressure;
     }
 
-    public void setPressure(Integer pressure) {
+    public void setPressure(Double pressure) {
         this.pressure = pressure;
     }
 

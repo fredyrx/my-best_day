@@ -14,6 +14,7 @@ import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.framos.mybestday.BestDayApp;
 import com.framos.mybestday.R;
+import com.framos.mybestday.models.Coord;
 import com.framos.mybestday.models.WeatherResponse;
 import com.framos.mybestday.network.WeatherApi;
 import com.google.gson.Gson;
@@ -21,6 +22,8 @@ import com.google.gson.Gson;
 import org.json.JSONObject;
 
 public class HomeActivity extends AppCompatActivity {
+
+    Coord currentPosition;
 
     TextView nameTextView;
     TextView tempMaxTextView;
@@ -43,9 +46,15 @@ public class HomeActivity extends AppCompatActivity {
         pressureTextView = (TextView) findViewById(R.id.pressure_textview);
         humidityTextView = (TextView) findViewById(R.id.humidity_textview);
 
+        // GET GPS POSITION}
+
+        currentPosition = new Coord();
+        currentPosition.setLat(35);
+        currentPosition.setLon(139);
+
         AndroidNetworking.get(WeatherApi.API_URL)
-                .addQueryParameter("lat", "35")
-                .addQueryParameter("lon", "139")
+                .addQueryParameter("lat", currentPosition.getLat().toString())
+                .addQueryParameter("lon", currentPosition.getLon().toString() )
                 .addQueryParameter("appid", getString(R.string.weather_api_key))
                 //.addQueryParameter("apiKey",getString(R.string.news_api_key))
                 .setTag(HomeActivity.class.getSimpleName())

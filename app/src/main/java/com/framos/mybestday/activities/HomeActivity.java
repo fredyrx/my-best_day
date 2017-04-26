@@ -165,7 +165,7 @@ public class HomeActivity extends AppCompatActivity implements
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
             // here to request the missing permissions, and then overriding
@@ -173,11 +173,11 @@ public class HomeActivity extends AppCompatActivity implements
             //                                          int[] grantResults)
             // to handle the case where the user grants the permission. See the documentation
             // for ActivityCompat#requestPermissions for more details.
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_COARSE_LOCATION)) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_FINE_LOCATION)) {
 
             } else {
                 ActivityCompat.requestPermissions(
-                        this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, 200);
+                        this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 200);
             }
 
             return;
@@ -213,6 +213,7 @@ public class HomeActivity extends AppCompatActivity implements
             if ((grantResults.length == 1)
                     && (grantResults[0] == PackageManager.PERMISSION_GRANTED))
                 setCurrentLocation();
+                paintWeather();
         }
     }
 

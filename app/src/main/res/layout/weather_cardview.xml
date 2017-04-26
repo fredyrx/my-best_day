@@ -13,57 +13,109 @@
         <TextView
             android:id="@+id/name_textview"
             android:layout_alignParentTop="true"
-            android:layout_margin="10dp"
-            android:height="100dp"
+            android:layout_margin="5dp"
             android:textSize="50dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="PERU"/>
-        <TextView
-            android:id="@+id/temp_max_textview"
-            android:layout_below="@id/name_textview"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:textSize="16dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="max:234"/>
-        <TextView
-            android:id="@+id/temp_min_textview"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_below="@id/name_textview"
-            android:layout_toRightOf="@id/temp_max_textview"
-            android:textSize="16dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="min:343"/>
-        <TextView
-            style="@style/items"
-            android:id="@+id/temp_textview"
-            android:layout_toRightOf="@id/name_textview"
-            android:height="20dp"
+            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="Temperature:"/>
-        <TextView
-            style="@style/items"
-            android:id="@+id/humidity_textview"
-            android:layout_toRightOf="@id/name_textview"
-            android:layout_below="@id/temp_textview"
-            android:height="20dp"
+            tools:text="LIMA"/>
+
+        <GridLayout
+            android:layout_below="@+id/name_textview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="Humidity:"/>
-        <TextView
-            style="@style/items"
-            android:id="@+id/pressure_textview"
-            android:layout_toRightOf="@id/name_textview"
-            android:layout_below="@id/humidity_textview"
-            android:height="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:text="Pressure:"/>
+            android:columnCount="2"
+            android:rowCount="1"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_columnSpan="1"
+                android:layout_gravity="fill_vertical">
+
+                <TextView
+                    android:id="@+id/country_textview"
+                    android:textSize="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="PE"/>
+
+                <TextView
+                    android:id="@+id/temp_max_textview"
+                    android:layout_marginTop="5dp"
+                    android:textSize="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="234.34°C"/>
+                <TextView
+                    style="@style/string_items_cardview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Max Temperature"/>
+
+                <TextView
+                    android:id="@+id/temp_min_textview"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@id/name_textview"
+                    android:layout_toRightOf="@id/temp_max_textview"
+                    android:textSize="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="343°C"/>
+                <TextView
+                    style="@style/string_items_cardview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Min Temperature"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_columnSpan="1"
+                android:layout_gravity="fill_vertical">
+                <TextView
+                    style="@style/items"
+                    android:id="@+id/temp_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="23°c"/>
+                <TextView
+                    style="@style/string_items_cardview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Temperature"/>
+
+                <TextView
+                    style="@style/items"
+                    android:id="@+id/humidity_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="16%"/>
+                <TextView
+                    style="@style/string_items_cardview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Humidity"/>
+
+                <TextView
+                    style="@style/items"
+                    android:id="@+id/pressure_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="34dHa"/>
+                <TextView
+                    style="@style/string_items_cardview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pressure"/>
+
+
+            </LinearLayout>
+        </GridLayout>
+
+
 
 
     </RelativeLayout>

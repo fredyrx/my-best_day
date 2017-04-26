@@ -12,9 +12,13 @@
         <item name="windowNoTitle">true</item>
     </style>
     <style name="items">
-        <item name="android:layout_margin">5dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+    
+    <style name="string_items_cardview">
         <item name="android:textSize">12dp</item>
-
+        <item name="android:color">@color/colorAccent</item>
     </style>
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

@@ -2,6 +2,7 @@ package com.framos.mybestday.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
@@ -25,12 +26,14 @@ public class HomeActivity extends AppCompatActivity {
 
     Coord currentPosition;
 
+    CardView weatherCardView;
     TextView nameTextView;
     TextView tempMaxTextView;
     TextView tempMinTextView;
     TextView pressureTextView;
     TextView humidityTextView;
     TextView tempTextView;
+    TextView countryTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,12 +42,17 @@ public class HomeActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        weatherCardView = (CardView) findViewById(R.id.wearher_card_view);
+        countryTextView = (TextView) findViewById(R.id.country_textview);
         nameTextView = (TextView) findViewById(R.id.name_textview);
         tempMaxTextView = (TextView) findViewById(R.id.temp_max_textview);
         tempMinTextView = (TextView) findViewById(R.id.temp_min_textview);
         tempTextView = (TextView) findViewById(R.id.temp_textview);
         pressureTextView = (TextView) findViewById(R.id.pressure_textview);
         humidityTextView = (TextView) findViewById(R.id.humidity_textview);
+
+        // set aplpha
+        weatherCardView.setAlpha((float) 0.7);
 
         // GET GPS POSITION}
 
@@ -70,11 +78,12 @@ public class HomeActivity extends AppCompatActivity {
 
                         // Seteamos los valores en el layout
                         nameTextView.setText(weather.getName());
-                        tempMaxTextView.setText("Max Temp: "+ String.valueOf(weather.getMain().getTemp_max()));
-                        tempMinTextView.setText("Min Temp: "+ String.valueOf(weather.getMain().getTemp_min()));
-                        tempTextView.setText("Temperature: "+ String.valueOf(weather.getMain().getTemp()));
-                        pressureTextView.setText("Pressure: "+String.valueOf(weather.getMain().getPressure()));
-                        humidityTextView.setText("Humidity: "+String.valueOf(weather.getMain().getHumidity()));
+                        countryTextView.setText(weather.getSys().getCountry());
+                        tempMaxTextView.setText( String.format("%s%s",weather.getMain().getTemp_max(), getString(R.string.temperature_unit)) );
+                        tempMinTextView.setText(String.format("%s%s",weather.getMain().getTemp_min(), getString(R.string.temperature_unit)) );
+                        tempTextView.setText(String.format("%s%s",weather.getMain().getTemp(), getString(R.string.temperature_unit)));
+                        pressureTextView.setText(String.format("%s%s",weather.getMain().getPressure(), getString(R.string.pressure_unit)));
+                        humidityTextView.setText(String.format("%s%s",weather.getMain().getHumidity(), getString(R.string.humidity_unit)));
                     }
 
                     @Override
